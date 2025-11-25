@@ -3,6 +3,7 @@
 #' This function evaluates the Quantile function of a mixture of skewed
 #' t distributions
 #' @param w real, 0<=w<=1: quantile levels.
+#' @param p real 0<=p<=1: mixing weight.
 #' @param gamma1 positive real: skewness parameter of the first population.
 #' @param mu1 real: location parameter of the first population.
 #' @param sigma1 positive real: scale parameter of the first population.
@@ -20,7 +21,7 @@
 #' yd <- qfst(.1,1.2,1,0.5,3)
 #' @importFrom Rdpack reprompt
 
-qfstMix <- function(alpha,p,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
+qfstMix <- function(w,p,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
 {
   nalpha <- length(alpha)
   x <- rep(NA,nalpha)
