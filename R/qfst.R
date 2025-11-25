@@ -2,7 +2,7 @@
 #'
 #' This function evaluates the Quantile function of the skewed
 #' Student t distribution
-#' @param p real, 0<=x<=1: quantile levels.
+#' @param w real, 0<=w<=1: quantile levels.
 #' @param gammap positive real: skewness parameter.
 #' @param mu real: location parameter.
 #' @param sigma positive real: scale parameter.
@@ -13,16 +13,16 @@
 #' yd <- qfst(.1,1.2,1,0.5,3)
 #' @importFrom Rdpack reprompt
 
-qfst <- function(p,gammap,mu,sigma,nu)
+qfst <- function(w,gammap,mu,sigma,nu)
 {
-  x <- rep(0,length(p))
+  x <- rep(0,length(w))
   alphaStar <- pfst(mu,gammap,mu,sigma,nu)
-  indici1 <- p < alphaStar
-  p1 <- p[indici1]
-  indici2 <- p >= alphaStar
-  p2 <- p[indici2]
-  x[indici1] <- sigma*qt(p1*(gammap^2+1)/2,nu)/gammap + mu
+  indici1 <- w < alphaStar
+  w1 <- w[indici1]
+  indici2 <- w >= alphaStar
+  w2 <- w[indici2]
+  x[indici1] <- sigma*qt(w1*(gammap^2+1)/2,nu)/gammap + mu
   x[indici2] <- mu + sigma*gammap * 
-    qt((1/(2*gammap^2)) * (p2*(gammap^2+1)-1)+1/2,nu)
+    qt((1/(2*gammap^2)) * (w2*(gammap^2+1)-1)+1/2,nu)
   return(x)
 }
