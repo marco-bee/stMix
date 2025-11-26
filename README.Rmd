@@ -1,0 +1,37 @@
+---
+output: github_document
+---
+
+## Overview
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+The goal of stMix is to estimate a two-population mixture of skewed t
+distributions via the EM algorithm.
+
+## Installation
+
+You can install the development version of stMix from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("marco-bee/stMix")
+```
+
+## Example
+
+This is a basic example which shows you how to simulate and estimate a lognormal-GPD mixture:
+
+```{r example}
+library(stMix)
+y <- rfstMix(100,.9,0,1,3)
+res <- stMixEM(y)
+```
+
