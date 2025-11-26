@@ -23,12 +23,12 @@
 
 qfstMix <- function(w,p,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
 {
-  nalpha <- length(alpha)
-  x <- rep(NA,nalpha)
-  minmax <- range(qfst(alpha,gamma1,mu1,sigma1,nu1),qfst(alpha,gamma2,mu2,sigma2,nu2)) 
-  for (i in 1:nalpha)
+  nw <- length(w)
+  x <- rep(NA,nw)
+  minmax <- range(qfst(w,gamma1,mu1,sigma1,nu1),qfst(w,gamma2,mu2,sigma2,nu2)) 
+  for (i in 1:nw)
   {
-    x[i] <- uniroot(function(x) pfstMix(x,p,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)-alpha[i],
+    x[i] <- uniroot(function(x) pfstMix(x,p,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)-w[i],
                     interval = minmax,
                     tol = 10^{-16})$root  
   }
