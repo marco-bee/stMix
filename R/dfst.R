@@ -13,6 +13,10 @@
 
 dfst <- function(x,gammap,mu,sigma,nu)
 {
+  if (gammap < 0) 
+    stop("invalid skewness")
+  if (nu < 0) 
+    stop("invalid DoF")
   xst <- (x-mu)/sigma
   indici1 <- xst>=0
   x1 <- xst[indici1]

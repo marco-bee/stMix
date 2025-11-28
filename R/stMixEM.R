@@ -29,12 +29,23 @@
 
 stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
 {
+  # p1 <- p0
+  # p2 <- 1 - p10
+  # gamma1 <- gamma10
+  # mu1 <- mu10
+  # sigma1 <- sigma10
+  # nu1 <- nu10
+  # gamma2 <- gamma20
+  # mu2 <- mu20
+  # sigma2 <- sigma20
+  # nu2 <- nu20
   p2 <- 1 - p1
   n <- length(Y)
   nit <- 1
   epsilon <- 1.e-10
   change <- 500
-
+  # parold <- c(p10,gamma10,mu10,sigma10,nu10,gamma20,mu20,sigma20,nu20)
+  
   # start iterations
 
   while (2>1)
@@ -64,27 +75,28 @@ stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
 
     # update means: M-step for means
 
-    res1 <- optim(c(gamma1,mu1,sigma1,nu1),
-         llstWei, gr = NULL, control = list(fnscale = -1), Y, post1)
-    gamma1 <- res1$par[1]
+    res1 <- optim(c(log(gamma1),mu1,log(sigma1),log(nu1)),
+                  llstWei, gr = NULL, control = list(fnscale = -1), Y, post1)
+    gamma1 <- exp(res1$par[1])
     mu1 <- res1$par[2]
-    sigma1 <- res1$par[3]
-    nu1 <- res1$par[4]
-    res2 <- optim(c(gamma2,mu2,sigma2,nu2),
+    sigma1 <- exp(res1$par[3])
+    nu1 <- exp(res1$par[4])
+    res2 <- optim(c(log(gamma2),mu2,log(sigma2),log(nu2)),
           llstWei, gr = NULL, control = list(fnscale = -1), Y, post2)
-    gamma2 <- res2$par[1]
+    gamma2 <- exp(res2$par[1])
     mu2 <- res2$par[2]
-    sigma2 <- res2$par[3]
-    nu2 <- res2$par[4]
+    sigma2 <- exp(res2$par[3])
+    nu2 <- exp(res2$par[4])
     
     # check convergence
 
     diffpar <- parold - c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
     change <- max(abs(diffpar))
+    # parold <- c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
     if (nit > maxiter || change < epsilon)
       break
     nit <- nit + 1
-    results <- list(p=p1,post=post[,1],gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=nu1,
+    results <- list(p=p1,post=post1,gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=nu1,
      gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=nu2,nit=nit)
   }
   return(results)

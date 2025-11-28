@@ -16,10 +16,10 @@
 
 llfst <- function(x,y)
 {
-  gammap <- x[1]
+  gammap <- exp(x[1])
   mu <- x[2]
-  sigma <- x[3]
-  tau <- log(x[4])
-  ll <- sum(log(dfst(y,gammap,mu,sigma,exp(tau))))
+  sigma <- exp(x[3])
+  tau <- exp(x[4])
+  ll <- sum(log(dfst(y,gammap,mu,sigma,tau)))
   return(ll)
 }
