@@ -1,4 +1,4 @@
-#' Weighted GPD log-likelihood of a skewed t distribution
+#' Weighted log-likelihood of a skewed t distribution
 #'
 #' This function evaluates the log-likelihood of a skewed t distribution
 #'  with weighted observations.

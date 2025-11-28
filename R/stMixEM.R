@@ -1,9 +1,9 @@
 #' Mixture estimation via EM
 #'
 #' This function estimates a of a two-population mixture of
-#' skewed t distributions #' by means of the EM algorithm.
-#' @param x0 numerical vector (9x1): initial values of the parameters p,
-#' \eqn{\gamma_1}, \eqn{\mu_1}, \eqn{\sigma_1}, \eqn{\nu_1}, 
+#' skewed t distributions by means of the EM algorithm.
+#' @param x0 numerical vector (9x1): initial values of the parameters \emph{p},
+#' \eqn{\gamma_1}, \eqn{\mu_1,} \eqn{\sigma_1}, \eqn{\nu_1}, 
 #' \eqn{\gamma_2}, \eqn{\mu_2}, \eqn{\sigma_2}, \eqn{\nu_2}. 
 #' @param y vector: observed data.
 #' @param maxiter positive integer: maximum number of iterations of the EM algorithm.

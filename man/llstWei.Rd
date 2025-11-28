@@ -2,7 +2,7 @@
 % Please edit documentation in R/llstWei.R
 \name{llstWei}
 \alias{llstWei}
-\title{Weighted GPD log-likelihood of a skewed t distribution}
+\title{Weighted log-likelihood of a skewed t distribution}
 \usage{
 llstWei(x, y, post)
 }

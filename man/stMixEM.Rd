@@ -9,8 +9,8 @@ stMixEM(Y, p1, gamma1, mu1, sigma1, nu1, gamma2, mu2, sigma2, nu2, maxiter)
 \arguments{
 \item{maxiter}{positive integer: maximum number of iterations of the EM algorithm.}
 
-\item{x0}{numerical vector (9x1): initial values of the parameters p,
-\eqn{\gamma_1}, \eqn{\mu_1}, \eqn{\sigma_1}, \eqn{\nu_1},
+\item{x0}{numerical vector (9x1): initial values of the parameters \emph{p},
+\eqn{\gamma_1}, \eqn{\mu_1,} \eqn{\sigma_1}, \eqn{\nu_1},
 \eqn{\gamma_2}, \eqn{\mu_2}, \eqn{\sigma_2}, \eqn{\nu_2}.}
 
 \item{y}{vector: observed data.}
@@ -31,7 +31,7 @@ A list with the following elements is returned:
 }
 \description{
 This function estimates a of a two-population mixture of
-skewed t distributions #' by means of the EM algorithm.
+skewed t distributions by means of the EM algorithm.
 }
 \examples{
 y <- rfstMix(100,.5,1.2,1.3,0.5,3,.8,1,1,7)
