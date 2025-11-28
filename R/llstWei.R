@@ -23,12 +23,6 @@ llstWei <- function(x,y,post)
   mu <- x[2]
   sigma <- exp(x[3])
   nu <- exp(x[4])
-  # ll <- dfst(y*post,gammap,mu,sigma,nu)
-  # llik <- sum(log(ll))
-  # gammap <- x[1]
-  # mu <- x[2]
-  # sigma <- x[3]
-  # nu <- x[4]
   ll <- dfst(y,gammap,mu,sigma,nu)
   llik <- sum(log(ll)*post)
   return(llik)
