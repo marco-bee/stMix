@@ -2,7 +2,7 @@
 % Please edit documentation in R/dfst.R
 \name{dfst}
 \alias{dfst}
-\title{Density function of the a skewed t distribution}
+\title{Density function of the skewed t distribution}
 \usage{
 dfst(x, gammap, mu, sigma, nu)
 }
