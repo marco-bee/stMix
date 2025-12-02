@@ -120,7 +120,7 @@ stMixEMSwitch <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nusta
 
     diffpar <- parold - c(p1,gamma1,mu1,sigma1,gamma2,mu2,sigma2)
     change <- max(abs(diffpar))
-    print(c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nit))
+#    print(c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nit))
     if (nit > maxiter || change < epsilon)
       break
     nit <- nit + 1
