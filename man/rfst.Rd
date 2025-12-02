@@ -18,7 +18,7 @@ rfst(n, gammap, mu, sigma, nu)
 \item{nu}{positive real: number of degrees of freedom.}
 }
 \value{
-n iid random numbers from the skewed t distribution.
+A vector containing n iid random numbers from the skewed t distribution.
 }
 \description{
 This function simulates random numbers from a skewed t distribution

@@ -2,10 +2,10 @@
 #'
 #' This function computes the density of a skewed normal distribution.
 #' @param x real: values where the density has to be evaluated.
-#' @param gammap real: skewness parameter.
+#' @param gammap positive real: skewness parameter.
 #' @param mu real: location parameter.
 #' @param sigma positive real: scale parameter.
-#' @return value of the density function of the skewed normal distribution.
+#' @return Value of the density function of the skewed normal distribution.
 #' @export
 #' @examples
 #' yd <- dsnorm(1,1.3,1,0.5)

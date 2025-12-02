@@ -2,9 +2,9 @@
 #'
 #' This function evaluates the log-likelihood of a skewed t distribution.
 #' @param x numerical vector (4x1): values of the parameters \eqn{\gamma},
-#' \eqn{\mu}, \eqn{sigma} and \eqn{\nu}. 
+#' \eqn{\mu}, \eqn{\sigma} and \eqn{\nu}. 
 #' @param y numerical vector (nx1): observed data.
-#' @return llik real: numerical value of the log-likelihood
+#' @return Numerical value of the log-likelihood
 #' function
 #' @export
 #' @examples

@@ -6,7 +6,7 @@
 #' @param mu real: location parameter.
 #' @param sigma positive real: scale parameter.
 #' @param nu positive real: number of degrees of freedom.
-#' @return n iid random numbers from the skewed t distribution.
+#' @return A vector containing n iid random numbers from the skewed t distribution.
 #' @export
 #' @examples
 #' ySim <- rfst(100,1.2,1.3,0.5,3)

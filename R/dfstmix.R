@@ -11,7 +11,9 @@
 #' @param mu2 real: location parameter of the second population.
 #' @param sigma2 positive real: scale parameter of the second population.
 #' @param nu2 real: number of degrees of freedom of the second population.
-#' @return value of the density function of the skewed t distribution.
+#' @return Value of the density function of the skewed t distribution. Notice
+#' that, if \eqn{\nu_i=+\infty} (\eqn{i=1,2}), the corresponding component
+#' becomes a skewed normal density.
 #' @export
 #' @examples
 #' yd <- dfstMix(1,1.3,1,0.5,3,.8,3,.7,5)

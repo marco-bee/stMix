@@ -26,7 +26,9 @@ dfstMix(x, p, gamma1, mu1, sigma1, nu1, gamma2, mu2, sigma2, nu2)
 \item{nu2}{real: number of degrees of freedom of the second population.}
 }
 \value{
-value of the density function of the skewed t distribution.
+Value of the density function of the skewed t distribution. Notice
+that, if \eqn{\nu_i=+\infty} (\eqn{i=1,2}), the corresponding component
+becomes a skewed normal density.
 }
 \description{
 This function computes the density of a mixture of two skewed t

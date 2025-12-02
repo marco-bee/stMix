@@ -31,7 +31,8 @@ population.}
 }
 \value{
 value of the quantile function of a mixture of skewed t
-distributions.
+distributions. Notice that, if \eqn{\nu_i=+\infty} (\eqn{i=1,2}), the
+corresponding component becomes a skewed normal density.
 }
 \description{
 This function evaluates the Quantile function of a mixture of skewed

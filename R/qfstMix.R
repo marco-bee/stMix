@@ -15,7 +15,8 @@
 #' @param nu2 positive real: number of degrees of freedom of the second
 #' population.
 #' @return value of the quantile function of a mixture of skewed t
-#' distributions.
+#' distributions. Notice that, if \eqn{\nu_i=+\infty} (\eqn{i=1,2}), the
+#' corresponding component becomes a skewed normal density.
 #' @export
 #' @examples
 #' yd <- qfst(.1,1.2,1,0.5,3)

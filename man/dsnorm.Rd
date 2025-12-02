@@ -9,14 +9,14 @@ dsnorm(x, gammap, mu, sigma)
 \arguments{
 \item{x}{real: values where the density has to be evaluated.}
 
-\item{gammap}{real: skewness parameter.}
+\item{gammap}{positive real: skewness parameter.}
 
 \item{mu}{real: location parameter.}
 
 \item{sigma}{positive real: scale parameter.}
 }
 \value{
-value of the density function of the skewed normal distribution.
+Value of the density function of the skewed normal distribution.
 }
 \description{
 This function computes the density of a skewed normal distribution.

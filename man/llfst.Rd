@@ -8,12 +8,12 @@ llfst(x, y)
 }
 \arguments{
 \item{x}{numerical vector (4x1): values of the parameters \eqn{\gamma},
-\eqn{\mu}, \eqn{sigma} and \eqn{\nu}.}
+\eqn{\mu}, \eqn{\sigma} and \eqn{\nu}.}
 
 \item{y}{numerical vector (nx1): observed data.}
 }
 \value{
-llik real: numerical value of the log-likelihood
+Numerical value of the log-likelihood
 function
 }
 \description{

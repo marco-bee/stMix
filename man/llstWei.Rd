@@ -8,7 +8,7 @@ llstWei(x, y, post)
 }
 \arguments{
 \item{x}{numerical vector (4x1): values of the parameters \eqn{\gamma},
-\eqn{\mu}, \eqn{sigma} and \eqn{\nu}.}
+\eqn{\mu}, \eqn{\sigma} and \eqn{\nu}.}
 
 \item{y}{numerical vector (nx1): observed data.}
 
@@ -16,8 +16,7 @@ llstWei(x, y, post)
 of the observations (in the EM algorithm, posterior probabilities).}
 }
 \value{
-llik real: numerical value of the log-likelihood
-function
+Numerical value of the log-likelihood function
 }
 \description{
 This function evaluates the log-likelihood of a skewed t distribution

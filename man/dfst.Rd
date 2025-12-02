@@ -9,7 +9,7 @@ dfst(x, gammap, mu, sigma, nu)
 \arguments{
 \item{x}{real: values where the density has to be evaluated.}
 
-\item{gammap}{real: skewness parameter.}
+\item{gammap}{positive real: skewness parameter.}
 
 \item{mu}{real: location parameter.}
 
@@ -18,7 +18,7 @@ dfst(x, gammap, mu, sigma, nu)
 \item{nu}{real: number of degrees of freedom.}
 }
 \value{
-value of the density function of the skewed t distribution.
+Value of the density function of the skewed t distribution.
 }
 \description{
 This function computes the density of a skewed t distribution.

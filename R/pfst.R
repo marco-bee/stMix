@@ -7,7 +7,7 @@
 #' @param mu real: location parameter.
 #' @param sigma positive real: scale parameter.
 #' @param nu positive real: number of degrees of freedom.
-#' @return value of the cdf of the skewed t distribution.
+#' @return Value of the cdf of the skewed t distribution.
 #' @export
 #' @examples
 #' yd <- pfst(1,1.3,1,0.5,3)

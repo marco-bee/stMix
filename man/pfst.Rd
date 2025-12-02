@@ -18,7 +18,7 @@ pfst(x, gammap, mu, sigma, nu)
 \item{nu}{positive real: number of degrees of freedom.}
 }
 \value{
-value of the cdf of the skewed t distribution.
+Value of the cdf of the skewed t distribution.
 }
 \description{
 This function evaluates the cdf of the skewed Student t distribution

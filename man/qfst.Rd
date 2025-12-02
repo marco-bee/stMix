@@ -18,10 +18,10 @@ qfst(w, gammap, mu, sigma, nu)
 \item{nu}{positive real: number of degrees of freedom.}
 }
 \value{
-value of the quantile function of the skewed t distribution.
+Value of the quantile function of the skewed t distribution.
 }
 \description{
-This function evaluates the Quantile function of the skewed
+This function evaluates the quantile function of the skewed
 Student t distribution
 }
 \examples{

@@ -15,7 +15,7 @@
 #' @param sigma2 positive real: scale parameter of the second population.
 #' @param nu2 positive real: number of degrees of freedom of the second
 #' population.
-#' @return value of the cdf of a two-population mixture of
+#' @return Value of the cdf of a two-population mixture of
 #' skewed t distributions.
 #' @export
 #' @examples

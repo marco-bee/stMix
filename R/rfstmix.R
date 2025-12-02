@@ -15,6 +15,9 @@
 #' @param sigma2 positive real: scale parameter of the second population.
 #' @param nu2 positive real: number of degrees of freedom of the second
 #' population.
+#' @return A vector containing n iid random numbers from a mixture of skewed t
+#' distributions. Notice that, if \eqn{\nu_i=+\infty} (\eqn{i=1,2}), the
+#' corresponding component becomes a skewed normal density.
 #' @export
 #' @examples
 #' ySim <- rfstMix(100,1.2,1.3,0.5,3,.8,.5,1,8)

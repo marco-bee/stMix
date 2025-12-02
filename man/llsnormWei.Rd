@@ -8,7 +8,7 @@ llsnormWei(x, y, post)
 }
 \arguments{
 \item{x}{numerical vector (3x1): values of the parameters \eqn{\gamma},
-\eqn{\mu} and \eqn{sigma}.}
+\eqn{\mu} and \eqn{\sigma}.}
 
 \item{y}{numerical vector (nx1): observed data.}
 
@@ -16,7 +16,7 @@ llsnormWei(x, y, post)
 of the observations (in the EM algorithm, posterior probabilities).}
 }
 \value{
-llik real: numerical value of the log-likelihood
+Numerical value of the log-likelihood
 function
 }
 \description{

@@ -1,13 +1,13 @@
 #' Quantile function of the skewed Student t distribution
 #'
-#' This function evaluates the Quantile function of the skewed
+#' This function evaluates the quantile function of the skewed
 #' Student t distribution
 #' @param w real, 0<=w<=1: quantile levels.
 #' @param gammap positive real: skewness parameter.
 #' @param mu real: location parameter.
 #' @param sigma positive real: scale parameter.
 #' @param nu positive real: number of degrees of freedom.
-#' @return value of the quantile function of the skewed t distribution.
+#' @return Value of the quantile function of the skewed t distribution.
 #' @export
 #' @examples
 #' yd <- qfst(.1,1.2,1,0.5,3)

@@ -2,11 +2,11 @@
 #'
 #' This function computes the density of a skewed t distribution.
 #' @param x real: values where the density has to be evaluated.
-#' @param gammap real: skewness parameter.
+#' @param gammap positive real: skewness parameter.
 #' @param mu real: location parameter.
 #' @param sigma positive real: scale parameter.
 #' @param nu real: number of degrees of freedom.
-#' @return value of the density function of the skewed t distribution.
+#' @return Value of the density function of the skewed t distribution.
 #' @export
 #' @examples
 #' yd <- dfst(1,1.3,1,0.5,3)

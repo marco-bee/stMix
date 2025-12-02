@@ -30,6 +30,11 @@ population.}
 \item{nu2}{positive real: number of degrees of freedom of the second
 population.}
 }
+\value{
+A vector containing n iid random numbers from a mixture of skewed t
+distributions. Notice that, if \eqn{\nu_i=+\infty} (\eqn{i=1,2}), the
+corresponding component becomes a skewed normal density.
+}
 \description{
 This function simulates random numbers from a two-population
 mixture of skewed t distributions

@@ -3,11 +3,11 @@
 #' This function evaluates the log-likelihood of a skewed normal distribution
 #'  with weighted observations.
 #' @param x numerical vector (3x1): values of the parameters \eqn{\gamma},
-#' \eqn{\mu} and \eqn{sigma}. 
+#' \eqn{\mu} and \eqn{\sigma}. 
 #' @param y numerical vector (nx1): observed data.
 #' @param post numerical vector (nx1) with elements in (0,1): weights
 #' of the observations (in the EM algorithm, posterior probabilities).
-#' @return llik real: numerical value of the log-likelihood
+#' @return Numerical value of the log-likelihood
 #' function
 #' @export
 #' @examples
