@@ -7,7 +7,7 @@
 #' \eqn{\gamma_2}, \eqn{\mu_2}, \eqn{\sigma_2}, \eqn{\nu_2}. 
 #' @param y vector: observed data.
 #' @param nustar positive real: degrees of freedom threshold. If the current 
-#' estimate of \eqn{\nu_i} ({\eqn i=1,2}) is larger than nustar, in the 
+#' estimate of \eqn{\nu_i} (\eqn{i=1,2}) is larger than nustar, in the 
 #' subsequent iterations the skewed t is replaced by a skewed normal.
 #' @param maxiter positive integer: maximum number of iterations of the EM algorithm.
 #' @return A list with the following elements is returned:
@@ -70,7 +70,6 @@ stMixEMSwitch <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nusta
     post1 <- p1*f1 / f
     post2 <- p2*f2 / f
     post <- cbind(post1, post2)
-    # print(post1)
 
     # update prior probabilities: M step
 
@@ -123,7 +122,6 @@ stMixEMSwitch <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nusta
 
     diffpar <- parold - c(p1,gamma1,mu1,sigma1,gamma2,mu2,sigma2)
     change <- max(abs(diffpar))
-#    print(c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nit))
     if (nit > maxiter || change < epsilon)
       break
     nit <- nit + 1

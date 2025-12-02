@@ -80,19 +80,19 @@ stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
     gamma1 <- exp(res1$par[1])
     mu1 <- res1$par[2]
     sigma1 <- exp(res1$par[3])
-    nu1 <- pmin(exp(res1$par[4]),100)
+    nu1 <- exp(res1$par[4])
     res2 <- optim(c(log(gamma2),mu2,log(sigma2),log(nu2)),
           llstWei, gr = NULL, control = list(fnscale = -1), Y, post2)
     gamma2 <- exp(res2$par[1])
     mu2 <- res2$par[2]
     sigma2 <- exp(res2$par[3])
-    nu2 <- pmin(exp(res2$par[4]),100)
+    nu2 <- exp(res2$par[4])
     
     # check convergence
 
     diffpar <- parold - c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
     change <- max(abs(diffpar))
-    print(c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nit))
+    # print(c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nit))
     # parold <- c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
     if (nit > maxiter || change < epsilon)
       break
