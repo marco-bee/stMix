@@ -6,6 +6,9 @@
 #' \eqn{\gamma_1}, \eqn{\mu_1,} \eqn{\sigma_1}, \eqn{\nu_1}, 
 #' \eqn{\gamma_2}, \eqn{\mu_2}, \eqn{\sigma_2}, \eqn{\nu_2}. 
 #' @param y vector: observed data.
+#' @param nustar positive real: degrees of freedom threshold. If the current 
+#' estimate of \eqn{\nu_i} ({\eqn i=1,2}) is larger than nustar, in the 
+#' subsequent iterations the skewed t is replaced by a skewed normal.
 #' @param maxiter positive integer: maximum number of iterations of the EM algorithm.
 #' @return A list with the following elements is returned:
 #' "p" = estimated value of p,
@@ -126,18 +129,18 @@ stMixEMSwitch <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nusta
     nit <- nit + 1
     if (nu1>=nustar)
     {
-      results <- list(p=p1,post=post1,gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=NA,
+      results <- list(p=p1,post=post1,gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=Inf,
      gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=nu2,nit=nit)
     }
     if (nu2>=nustar)
     {
       results <- list(p=p1,post=post1,gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=nu1,
-                      gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=NA,nit=nit)
+                      gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=Inf,nit=nit)
     }
     if (nu1>=nustar & nu2>=nustar)
     {
-      results <- list(p=p1,post=post1,gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=NA,
-                      gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=NA,nit=nit)
+      results <- list(p=p1,post=post1,gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=Inf,
+                      gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=Inf,nit=nit)
     }
     if (nu1<nustar & nu2<nustar)
     {
