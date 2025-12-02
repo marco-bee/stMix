@@ -31,7 +31,7 @@ population.}
 population.}
 }
 \value{
-value of the cdf of of a two-population mixture of
+value of the cdf of a two-population mixture of
 skewed t distributions.
 }
 \description{

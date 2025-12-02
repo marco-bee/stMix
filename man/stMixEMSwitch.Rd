@@ -20,6 +20,10 @@ stMixEMSwitch(
 )
 }
 \arguments{
+\item{nustar}{positive real: degrees of freedom threshold. If the current
+estimate of \eqn{\nu_i} ({\eqn i=1,2}) is larger than nustar, in the
+subsequent iterations the skewed t is replaced by a skewed normal.}
+
 \item{maxiter}{positive integer: maximum number of iterations of the EM algorithm.}
 
 \item{x0}{numerical vector (9x1): initial values of the parameters \emph{p},
