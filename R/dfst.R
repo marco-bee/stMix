@@ -28,6 +28,6 @@ dfst <- function(x,gammap,mu,sigma,nu)
   f1[!indici1] = 0
   f2[indici2] <- dt(x2*gammap,nu)/sigma
   f2[!indici2] = 0
-  f <- (2/(gammap+(1/gammap))) * (f1+f2)
+  f <- pmax((2/(gammap+(1/gammap))) * (f1+f2),1e-323)
   return(f)
 }

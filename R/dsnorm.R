@@ -25,6 +25,6 @@ dsnorm <- function(x,gammap,mu,sigma)
   f1[!indici1] = 0
   f2[indici2] <- dnorm(x2*gammap)/sigma
   f2[!indici2] = 0
-  f <- (2/(gammap+(1/gammap))) * (f1+f2)
+  f <- pmax((2/(gammap+(1/gammap))) * (f1+f2),1e-323)
   return(f)
 }
