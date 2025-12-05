@@ -50,7 +50,7 @@ stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
 
   while (2>1)
   {
-    parold <- c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
+    parold <- c(p1,gamma1,mu1,sigma1,gamma2,mu2,sigma2)
 
     # evaluate component densities and mixture density
 
@@ -90,7 +90,7 @@ stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
     
     # check convergence
 
-    diffpar <- parold - c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
+    diffpar <- parold - c(p1,gamma1,mu1,sigma1,gamma2,mu2,sigma2)
     change <- max(abs(diffpar))
     # print(c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nit))
     # parold <- c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
