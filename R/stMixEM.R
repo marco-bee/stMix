@@ -29,23 +29,12 @@
 
 stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
 {
-  # p1 <- p0
-  # p2 <- 1 - p10
-  # gamma1 <- gamma10
-  # mu1 <- mu10
-  # sigma1 <- sigma10
-  # nu1 <- nu10
-  # gamma2 <- gamma20
-  # mu2 <- mu20
-  # sigma2 <- sigma20
-  # nu2 <- nu20
   p2 <- 1 - p1
   n <- length(Y)
   nit <- 1
   epsilon <- 1.e-10
   change <- 500
-  # parold <- c(p10,gamma10,mu10,sigma10,nu10,gamma20,mu20,sigma20,nu20)
-  
+
   # start iterations
 
   while (2>1)
@@ -64,36 +53,32 @@ stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
     post1 <- p1*f1 / f
     post2 <- p2*f2 / f
     post <- cbind(post1, post2)
-    # print(post1)
 
     # update prior probabilities: M step
 
     prior <- colMeans(post)
     p1 <- as.double(prior[1])
     p2 <- as.double(prior[2])
-    # print(p1)
 
     # update means: M-step for means
 
-    res1 <- optim(c(log(gamma1),mu1,log(sigma1),pmin(log(nu1),1.7e+307)),
+    res1 <- optim(c(log(gamma1),mu1,log(sigma1),pmin(log(nu1-2),1.7e+307)),
                   llstWei, gr = NULL, control = list(fnscale = -1), Y, post1)
     gamma1 <- exp(res1$par[1])
     mu1 <- res1$par[2]
     sigma1 <- exp(res1$par[3])
-    nu1 <- exp(res1$par[4])
-    res2 <- optim(c(log(gamma2),mu2,log(sigma2),pmin(log(nu2),1.7e+307)),
+    nu1 <- exp(res1$par[4])+2
+    res2 <- optim(c(log(gamma2),mu2,log(sigma2),pmin(log(nu2-2),1.7e+307)),
           llstWei, gr = NULL, control = list(fnscale = -1), Y, post2)
     gamma2 <- exp(res2$par[1])
     mu2 <- res2$par[2]
     sigma2 <- exp(res2$par[3])
-    nu2 <- exp(res2$par[4])
+    nu2 <- exp(res2$par[4])+2
     
     # check convergence
 
     diffpar <- parold - c(p1,gamma1,mu1,sigma1,gamma2,mu2,sigma2)
     change <- max(abs(diffpar))
-    # print(c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nit))
-    # parold <- c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
     if (nit > maxiter || change < epsilon)
       break
     nit <- nit + 1
