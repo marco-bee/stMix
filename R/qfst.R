@@ -21,8 +21,8 @@ qfst <- function(w,gammap,mu,sigma,nu)
   w1 <- w[indici1]
   indici2 <- w >= alphaStar
   w2 <- w[indici2]
-  x[indici1] <- sigma*sqrt(nu/(nu-2))*qt(w1*(gammap^2+1)/2,nu)/gammap + mu
-  x[indici2] <- mu + sigma*sqrt(nu/(nu-2))*gammap * 
+  x[indici1] <- sigma*qt(w1*(gammap^2+1)/2,nu)/gammap + mu
+  x[indici2] <- mu + sigma*gammap * 
     qt((1/(2*gammap^2)) * (w2*(gammap^2+1)-1)+1/2,nu)
   return(x)
 }

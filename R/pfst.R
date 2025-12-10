@@ -18,7 +18,7 @@ pfst <- function(x,gammap,mu,sigma,nu)
   if (nu == Inf)
     nu = 1.7e+307
   F <- rep(0,length(x))
-  xst <- (x-mu)/(sigma*sqrt(nu/(nu-2)))
+  xst <- (x-mu)/sigma
   indici1 <- xst>=0
   x1 <- xst[indici1]
   indici2 <- xst<0
