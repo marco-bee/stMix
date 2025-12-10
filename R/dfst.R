@@ -15,7 +15,7 @@ dfst <- function(x,gammap,mu,sigma,nu)
 {
   if (gammap < 0) 
     stop("invalid skewness")
-  if (nu < 2) 
+  if (nu <= 2) 
     stop("invalid DoF")
   if (nu == Inf)
     nu = 1.7e+307
