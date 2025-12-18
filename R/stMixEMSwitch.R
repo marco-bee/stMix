@@ -82,7 +82,9 @@ stMixEMSwitch <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nusta
     if (nu1<nustar)
     {
       f1 <- dfst(Y,gamma1,mu1,sigma1,nu1)
-      res1 <- optim(c(log(gamma1),mu1,log(sigma1),pmin(log(nu1-2),1.7e+307)),
+      # res1 <- optim(c(log(gamma1),mu1,log(sigma1),pmin(log(nu1-2),1.7e+307)),
+      #               llstWei, gr = NULL, control = list(fnscale = -1), Y, post1)
+      res1 <- optim(c(log(gamma1),mu1,log(sigma1),log(nu1)),
                     llstWei, gr = NULL, control = list(fnscale = -1), Y, post1)
       gamma1 <- exp(res1$par[1])
       mu1 <- res1$par[2]
@@ -101,7 +103,9 @@ stMixEMSwitch <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nusta
     if (nu2<nustar)
     {
       f2 <- dfst(Y,gamma2,mu2,sigma2,nu2)
-      res2 <- optim(c(log(gamma2),mu2,log(sigma2),pmin(log(nu2-2),1.7e+307)),
+      # res2 <- optim(c(log(gamma2),mu2,log(sigma2),pmin(log(nu2-2),1.7e+307)),
+      #               llstWei, gr = NULL, control = list(fnscale = -1), Y, post2)
+      res2 <- optim(c(log(gamma2),mu2,log(sigma2),log(nu2)),
                     llstWei, gr = NULL, control = list(fnscale = -1), Y, post2)
       gamma2 <- exp(res2$par[1])
       mu2 <- res2$par[2]
