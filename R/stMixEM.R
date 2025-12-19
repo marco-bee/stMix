@@ -74,6 +74,7 @@ stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
     mu2 <- res2$par[2]
     sigma2 <- exp(res2$par[3])
     nu2 <- exp(res2$par[4])
+    loglik <- sum(log(dfstMix(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)))
     
     # check convergence
 
@@ -83,7 +84,7 @@ stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
       break
     nit <- nit + 1
     results <- list(p=p1,post=post1,gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=nu1,
-     gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=nu2,nit=nit)
+     gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=nu2,nit=nit,loglik=loglik)
   }
   return(results)
 }
