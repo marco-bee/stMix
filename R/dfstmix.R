@@ -20,6 +20,13 @@
 #' 
 dfstMix <- function(x,p,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
 {
-  f <- p * dfst(x,gamma1,mu1,sigma1,nu1) + (1-p) * dfst(x,gamma2,mu2,sigma2,nu2)
+  if (gamma1!=1 & gamma2!=1)
+    f <- p * dfst(x,gamma1,mu1,sigma1,nu1) + (1-p) * dfst(x,gamma2,mu2,sigma2,nu2)
+  if (gamma1==1 & gamma2!=1)
+    f <- p * dlst(x,nu1,mu1,sigma1) + (1-p) * dfst(x,gamma2,mu2,sigma2,nu2)
+  if (gamma1!=1 & gamma2==1)
+    f <- p * dfst(x,gamma1,mu1,sigma1,nu1) + (1-p) * dlst(x,nu2,mu2,sigma2)
+  if (gamma1==1 & gamma2==1)
+    f <- p * dfst(x,gamma1,mu1,sigma1,nu1) + (1-p) * dlst(x,nu2,mu2,sigma2)
   return(f)
 }
