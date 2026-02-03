@@ -39,5 +39,5 @@ This function evaluates the Quantile function of a mixture of skewed
 t distributions
 }
 \examples{
-yd <- qfst(.1,1.2,1,0.5,3)
+yd <- qfstMix(.9,.1,.8,-1,0.5,3,1.3,2,1,6)
 }
