@@ -89,7 +89,7 @@ stMixEMSwitch <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nusta
       gamma1 <- exp(res1$par[1])
       mu1 <- res1$par[2]
       sigma1 <- exp(res1$par[3])
-      nu1 <- exp(res1$par[4])+2
+      nu1 <- exp(res1$par[4]) # +2
     }
     if (nu1>=nustar)
     {
@@ -110,7 +110,7 @@ stMixEMSwitch <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nusta
       gamma2 <- exp(res2$par[1])
       mu2 <- res2$par[2]
       sigma2 <- exp(res2$par[3])
-      nu2 <- exp(res2$par[4])+2
+      nu2 <- exp(res2$par[4]) # +2
     }
     if (nu2>=nustar)
     {
