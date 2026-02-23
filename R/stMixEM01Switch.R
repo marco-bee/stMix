@@ -94,6 +94,7 @@ stMixEM01Switch <- function(Y,p1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nustar,max
                     llsnormWei0, gr = NULL, control = list(fnscale = -1), Y, post1)
       mu1 <- res1$par[1]
       sigma1 <- exp(res1$par[2])
+      nu1 <- Inf
     }
     if (nu2<nustar)
     {
@@ -113,6 +114,7 @@ stMixEM01Switch <- function(Y,p1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,nustar,max
       gamma2 <- exp(res2$par[1])
       mu2 <- res2$par[2]
       sigma2 <- exp(res2$par[3])
+      nu2 <- Inf
     }
     loglik <- sum(log(dfstMix(Y,p1,1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)))
     
