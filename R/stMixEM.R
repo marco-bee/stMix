@@ -83,8 +83,8 @@ stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
     if (nit > maxiter || change < epsilon)
       break
     nit <- nit + 1
-    results <- list(p=p1,post=post1,gamma1=gamma1,mu1=mu1,sigma1=sigma1,nu1=nu1,
-     gamma2=gamma2,mu2=mu2,sigma2=sigma2,nu2=nu2,nit=nit,loglik=loglik)
+    estPars <- c(p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)
+    results <- list(estPars=estPars,post=post1,nit=nit,loglik=loglik)
   }
   return(results)
 }
