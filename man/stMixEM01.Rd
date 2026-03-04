@@ -4,9 +4,24 @@
 \alias{stMixEM01}
 \title{Mixture estimation via EM}
 \usage{
-stMixEM01(Y, p1, mu1, sigma1, nu1, gamma2, mu2, sigma2, nu2, cap, maxiter)
+stMixEM01(
+  Y,
+  p1,
+  mu1,
+  sigma1,
+  nu1,
+  gamma2,
+  mu2,
+  sigma2,
+  nu2,
+  cap = 100,
+  maxiter
+)
 }
 \arguments{
+\item{cap}{non-negative scalar: maximum value of the degrees of freedom
+parameters \eqn{\nu_1} and \eqn{\nu_2}. Defaults to 100.}
+
 \item{maxiter}{positive integer: maximum number of iterations of the EM algorithm.}
 
 \item{x0}{numerical vector (9x1): initial values of the parameters \emph{p},
@@ -26,7 +41,8 @@ A list with the following elements is returned:
 "mu2" = estimated value of \eqn{\mu_2},
 "sigma2 " = estimated value of \eqn{\sigma_2},
 "nu2" = estimated value of \eqn{\nu_2},
-"nit" = number of iterations.
+"nit" = number of iterations,
+"loglik" = maximized log-likelihood.
 }
 \description{
 This function estimates a of a two-population mixture of

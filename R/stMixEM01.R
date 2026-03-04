@@ -6,6 +6,8 @@
 #' \eqn{\mu_1,} \eqn{\sigma_1}, \eqn{\nu_1}, 
 #' \eqn{\gamma_2}, \eqn{\mu_2}, \eqn{\sigma_2}, \eqn{\nu_2}. 
 #' @param y vector: observed data.
+#' @param cap non-negative scalar: maximum value of the degrees of freedom
+#' parameters \eqn{\nu_1} and \eqn{\nu_2}. Defaults to 100.
 #' @param maxiter positive integer: maximum number of iterations of the EM algorithm.
 #' @return A list with the following elements is returned:
 #' "p" = estimated value of p,
@@ -17,7 +19,8 @@
 #' "mu2" = estimated value of \eqn{\mu_2},
 #' "sigma2 " = estimated value of \eqn{\sigma_2},
 #' "nu2" = estimated value of \eqn{\nu_2},
-#' "nit" = number of iterations.
+#' "nit" = number of iterations,
+#' "loglik" = maximized log-likelihood.
 #' @export
 #' @examples
 #' y <- rfstMix(100,.5,1,1.3,0.5,3,.8,1,1,7)
@@ -26,7 +29,7 @@
 #'
 #' @importFrom Rdpack reprompt
 
-stMixEM01 <- function(Y,p1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,cap,maxiter)
+stMixEM01 <- function(Y,p1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,cap=100,maxiter)
 {
   p2 <- 1 - p1
   n <- length(Y)
