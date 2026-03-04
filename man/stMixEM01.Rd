@@ -4,7 +4,7 @@
 \alias{stMixEM01}
 \title{Mixture estimation via EM}
 \usage{
-stMixEM01(Y, p1, mu1, sigma1, nu1, gamma2, mu2, sigma2, nu2, maxiter)
+stMixEM01(Y, p1, mu1, sigma1, nu1, gamma2, mu2, sigma2, nu2, cap, maxiter)
 }
 \arguments{
 \item{maxiter}{positive integer: maximum number of iterations of the EM algorithm.}

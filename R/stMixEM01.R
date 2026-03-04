@@ -26,7 +26,7 @@
 #'
 #' @importFrom Rdpack reprompt
 
-stMixEM01 <- function(Y,p1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
+stMixEM01 <- function(Y,p1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,cap,maxiter)
 {
   p2 <- 1 - p1
   n <- length(Y)
@@ -61,17 +61,17 @@ stMixEM01 <- function(Y,p1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,maxiter)
 
     # update means: M-step for means
 
-    res1 <- optim(c(mu1,log(sigma1),pmin(log(nu1),1.7e+307)),
+    res1 <- optim(c(mu1,log(sigma1),pmin(log(nu1),cap)),
                   llstWei0, gr = NULL, control = list(fnscale = -1), Y, post1)
     mu1 <- res1$par[1]
     sigma1 <- exp(res1$par[2])
-    nu1 <- exp(res1$par[3])
-    res2 <- optim(c(log(gamma2),mu2,log(sigma2),pmin(log(nu2),1.7e+307)),
+    nu1 <- pmin(exp(res1$par[3]),cap)
+    res2 <- optim(c(log(gamma2),mu2,log(sigma2),pmin(log(nu2),cap)),
           llstWei, gr = NULL, control = list(fnscale = -1), Y, post2)
     gamma2 <- exp(res2$par[1])
     mu2 <- res2$par[2]
     sigma2 <- exp(res2$par[3])
-    nu2 <- exp(res2$par[4])
+    nu2 <- pmin(exp(res2$par[4]),cap)
     loglik <- sum(log(dfstMix(Y,p1,1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2)))
     
     # check convergence
