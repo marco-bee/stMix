@@ -15,13 +15,13 @@ stMixEM(
   mu2,
   sigma2,
   nu2,
-  cap = 100,
+  cap = 30,
   maxiter
 )
 }
 \arguments{
 \item{cap}{non-negative scalar: maximum value of the degrees of freedom
-parameters \eqn{\nu_1} and \eqn{\nu_2}. Defaults to 100.}
+parameters \eqn{\nu_1} and \eqn{\nu_2}. Defaults to 30.}
 
 \item{maxiter}{positive integer: maximum number of iterations of the EM algorithm.}
 
@@ -49,6 +49,10 @@ A list with the following elements is returned:
 \description{
 This function estimates a of a two-population mixture of
 skewed t distributions by means of the EM algorithm.
+}
+\details{
+If the initial value of \eqn{\gamma_1} and/or \eqn{\gamma_2} is
+NULL, the corresponding parameter is not estimated, but set equal to 1.
 }
 \examples{
 y <- rfstMix(100,.5,1.2,1.3,0.5,3,.8,1,1,7)
