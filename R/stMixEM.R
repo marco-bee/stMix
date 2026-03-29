@@ -7,7 +7,7 @@
 #' \eqn{\gamma_2}, \eqn{\mu_2}, \eqn{\sigma_2}, \eqn{\nu_2}. 
 #' @param y vector: observed data.
 #' @param cap non-negative scalar: maximum value of the degrees of freedom
-#' parameters \eqn{\nu_1} and \eqn{\nu_2}. Defaults to 100.
+#' parameters \eqn{\nu_1} and \eqn{\nu_2}. Defaults to 30.
 #' @param maxiter positive integer: maximum number of iterations of the EM algorithm.
 #' @return A list with the following elements is returned:
 #' "p" = estimated value of p,
@@ -30,7 +30,7 @@
 #'
 #' @importFrom Rdpack reprompt
 
-stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,cap=100,maxiter)
+stMixEM <- function(Y,p1,gamma1,mu1,sigma1,nu1,gamma2,mu2,sigma2,nu2,cap=30,maxiter)
 {
   p2 <- 1 - p1
   n <- length(Y)
