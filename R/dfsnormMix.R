@@ -13,7 +13,7 @@
 #' distributions.
 #' @export
 #' @examples
-#' yd <- dfsnormMix(1,1.3,1,0.5,.8,3,.7)
+#' yd <- dfsnormMix(1,1.3,1,0.5,.7,3,.7)
 #' 
 dfsnormMix <- function(x,p,gamma1,mu1,sigma1,gamma2,mu2,sigma2)
 {
