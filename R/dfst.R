@@ -9,7 +9,7 @@
 #' @return Value of the density function of the skewed t distribution.
 #' @export
 #' @examples
-#' yd <- dfst(1,1.3,1,0.5,3)
+#' yd <- dfst(1,1.3,1,1,3)
 
 dfst <- function(x,gammap,mu,sigma,nu)
 {
