@@ -1,6 +1,6 @@
 #' Quantile function of a mixture of skewed normal t distributions
 #'
-#' This function evaluates the Quantile function of a mixture of skewed
+#' This function evaluates the quantile function of a mixture of skewed
 #' normal distributions
 #' @param w real, 0<=w<=1: quantile levels.
 #' @param p real 0<=p<=1: mixing weight.

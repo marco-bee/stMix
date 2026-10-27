@@ -24,5 +24,5 @@ Value of the density function of the skewed t distribution.
 This function computes the density of a skewed t distribution.
 }
 \examples{
-yd <- dfst(1,1.3,1,0.5,3)
+yd <- dfst(1,1.3,1,1,3)
 }

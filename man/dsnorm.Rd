@@ -22,5 +22,5 @@ Value of the density function of the skewed normal distribution.
 This function computes the density of a skewed normal distribution.
 }
 \examples{
-yd <- dsnorm(1,1.3,1,0.5)
+yd <- dsnorm(1,1.4,1,0.5)
 }

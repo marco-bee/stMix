@@ -28,7 +28,7 @@ value of the quantile function of a mixture of skewed-normal
 distributions.
 }
 \description{
-This function evaluates the Quantile function of a mixture of skewed
+This function evaluates the quantile function of a mixture of skewed
 normal distributions
 }
 \examples{
